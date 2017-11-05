@@ -1,1 +1,4 @@
 
+/*Can we do nested IF-Then else in CORTEX –M4 ?*/
+
+We cannot do a nested if then else .
