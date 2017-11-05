@@ -1,17 +1,23 @@
 
-
+/* Implement Fibonacci  series using Cortex M4 */
 	AREA     appcode, CODE, READONLY
 		
 		ENTRY 
 		EXPORT __main
 __main  		 
-		MOV R2, #10
-		MOV R7,#12
-		MOV R4, #14
-		CMP R2,R7
-		ITTEE NE
-		SUBNE R2,R2,R7
-		MOVNE R2,#0
-		ADDEQ R2,R2,R4
-		MOVEQ R4, #0
+		MOV R0,#0
+		MOV R1,#1
+		MOV R3,#50
+		MOV R4,#0
+		ADD R4,R0,R1
+loop1 		CMP R4,R3
+		BLE LOOP
+		B stop  
+LOOP 		MOV R5,R4 ;series is shown in R5	
+		MOV R0,R1
+		MOV R1,R4
+		ADD R4,R0,R1
+		B loop1
+stop   		B stop 
+		
 		END
