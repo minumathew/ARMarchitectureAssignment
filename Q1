@@ -1,23 +1,22 @@
-
-/* Implement Fibonacci  series using Cortex M4 */
-	AREA     appcode, CODE, READONLY
-		
-		ENTRY 
+		AREA appcode, CODE, READONLY
 		EXPORT __main
-__main  		 
+		ENTRY 
+__main  FUNCTION		 
 		MOV R0,#0
 		MOV R1,#1
 		MOV R3,#50
 		MOV R4,#0
 		ADD R4,R0,R1
-loop1 		CMP R4,R3
+loop1 		
+		CMP R4,R3
 		BLE LOOP
 		B stop  
-LOOP 		MOV R5,R4 ;series is shown in R5	
+LOOP 		
+		MOV R5,R4 ;series is shown in R5	
 		MOV R0,R1
 		MOV R1,R4
 		ADD R4,R0,R1
 		B loop1
 stop   		B stop 
-		
+		ENDFUNC
 		END
