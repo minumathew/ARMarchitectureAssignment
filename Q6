@@ -3,7 +3,8 @@ AREA     appcode, CODE, READONLY
 		
 		ENTRY 
 		EXPORT __main
-    MOV R2, #10
+ __main    
+ 		MOV R2, #10
 		MOV R7,#12
 loop	
 		CMP R2,R7
