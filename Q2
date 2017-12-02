@@ -1,16 +1,13 @@
-/*	Given three number find the largest of the three using Cortex M4 */
-  AREA     appcode, CODE, READONLY
-		
-		ENTRY 
+		AREA appcode, CODE, READONLY
 		EXPORT __main
-__main  		 
-
+		ENTRY 
+__main  FUNCTION
     MOV R0, #10
 		MOV R1, #11
 		MOV R2, #12
 		CMP R0,R1
-		               
-    ITE GT
+		               
+    ITE GT
 		MOVGT R3,R0
 		MOVLE R3,R1
 		
@@ -18,4 +15,7 @@ __main
 		ITE GT
 		MOVGT R3,R3
 		MOVLE R3,R2
+		;GREATEST NUMBER STORED IN r3
+stop   		B stop 
+		ENDFUNC
     END
